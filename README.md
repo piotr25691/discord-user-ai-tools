@@ -20,6 +20,6 @@ A basic bot which generates new AI messages based on your model.
 [Tensorflow](https://www.tensorflow.org/) and [GPT2](https://github.com/minimaxir/gpt-2-simple) are required for this to work.
 To use Tensorflow, please download the following packages: <br>
 - CUDA: https://developer.nvidia.com/cuda-11.2.0-download-archive <br>
-- CUDNN: https://developer.nvidia.com/rdp/cudnn-archive
+- CUDNN: https://developer.nvidia.com/rdp/cudnn-archive (get version 8.1.0)
 
 Have fun with your brand-new AIs!
