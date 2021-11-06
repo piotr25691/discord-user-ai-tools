@@ -1,5 +1,5 @@
 # This bot allows you to use your newly created model to make some really funny as if they were a certain person.
-# Requires an already trained model. (run generate_model_gpt.py on Google Colab)
+# Requires an already trained model. (run generate_model.ipynb on Google Colab)
 # Requires discord.py (or any fork)
 
 import gpt_2_simple as gpt2
