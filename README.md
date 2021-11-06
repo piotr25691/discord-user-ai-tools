@@ -3,7 +3,7 @@ A collection of tools that can be used to make your own AI of any Discord user.
 
 
 ## Contents
-`fetch_messages.py`
+`generate_dataset.py`
 ---
 A dataset generator bot. Use this to make a dataset of any Discord user's messages.
 
