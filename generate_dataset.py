@@ -11,8 +11,6 @@ client = commands.Bot(command_prefix="++")
 
 @client.command()
 async def fetch(ctx, uid: int, gpt=""):
-    if not ctx.me.guild_permissions.administrator:
-        return await ctx.send("I need the `ADMINISTRATOR` permission to fetch!")
     msg = await ctx.send("Fetching messages...\nThis will take a while.")
     messages = []
     count = 0
