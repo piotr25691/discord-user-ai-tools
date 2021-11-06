@@ -7,9 +7,9 @@ A collection of tools that can be used to make your own AI of any Discord user.
 ---
 A dataset generator bot. Use this to make a dataset of any Discord user's messages.
 
-`generate_model.py`
+`generate_model.ipynb`
 ---
-This file creates and trains an AI based on your dataset. Please run this on Google Colab!
+This notebook file creates and trains an AI based on your dataset. Please run this on Google Colab!
 
 `generate_text.py`
 ---
