@@ -27,7 +27,7 @@ async def fetch(ctx, uid: int, gpt=""):
         res = "\n".join(message.content for message in messages)
     else:
         res = "\n".join(f"<|startoftext|> {message.content} <|endoftext|>" for message in messages)
-    with open("messages.txt", "w", errors="ignore") as f:
+    with open("messages.txt", "w", encoding="utf-8") as f:
         f.write(res)
     await msg.delete()
     await ctx.send(file=discord.File("messages.txt"))
