@@ -6,6 +6,7 @@
 import os
 
 # discord.py
+import discord
 from discord.ext import commands
 
 # third-party
