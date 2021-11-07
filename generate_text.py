@@ -12,7 +12,7 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import gpt_2_simple as gpt2
 
-client = commands.Bot(command_prefix="hey sadie ")  # replace this prefix if you want your ai bot to be accurate
+client = commands.Bot(command_prefix="ai ")
 load_dotenv()
 sess = None
 
