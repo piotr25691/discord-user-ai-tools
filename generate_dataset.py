@@ -27,7 +27,7 @@ async def fetch(ctx, user: discord.Member, gpt=""):
         os.remove("gpt_dataset.txt")
     msg = await ctx.send("Fetching messages...\nThis will take a while.")
     count = 0
-    name = None
+    name: str or None = None 
     for channel in [channel for channel in ctx.guild.channels if isinstance(channel, discord.TextChannel)]:
         try:
             async for message in channel.history(limit=None):
