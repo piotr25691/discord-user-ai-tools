@@ -12,10 +12,11 @@ from discord.ext import commands
 # third-party
 from dotenv import load_dotenv
 import gpt_2_simple as gpt2
+import tensorflow as tf
 
 client = commands.Bot(command_prefix="ai ")
 load_dotenv()
-sess = None
+sess: tf.compat.v1.Session or None = None
 
 
 @client.command()
