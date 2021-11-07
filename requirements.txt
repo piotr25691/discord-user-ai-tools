@@ -1,0 +1,4 @@
+tensorflow
+gpt-2-simple
+python-dotenv
+discord.py # or any fork
