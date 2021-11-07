@@ -26,7 +26,7 @@ async def fetch(ctx, user: discord.Member, gpt=""):
     count = 0
     for channel in [channel for channel in ctx.guild.channels if isinstance(channel, discord.TextChannel)]:
         try:
-            async for message in channel.history(limit=100):
+            async for message in channel.history(limit=None):
                 count += 1
                 print(f"Processed {count} messages")
                 if message.author.id == user.id:
