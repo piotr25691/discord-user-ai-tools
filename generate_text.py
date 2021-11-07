@@ -19,12 +19,16 @@ sess = None
 
 @client.command()
 async def conditional(ctx, length: int, amount: int, *, start):
-    msg = await ctx.send("Thinking...\nPlease wait.")
+    if length > 250 or amount > 10:
+        return await ctx.send("You can only make up to 10 250 character samples.")
+    msg = await ctx.send("<a:typing:906926432142389249>\u200b")  # please replace this message
     result = gpt2.generate(sess, truncate="<|endoftext|>", length=length, nsamples=amount, prefix=start,
                            temperature=1, return_as_list=True)
-    await msg.delete()
+    e = discord.Embed(title="The AI says...", description=f"{start}...", color=discord.Colour.blue())
+    e.set_footer(text=f"{amount} samples generated")
     for n, sample in enumerate(result, start=1):
-        await ctx.send(f"SAMPLE {n} - {start}...\n{sample}")
+        e.add_field(name=f"SAMPLE {n}", value=sample)
+    await msg.edit(content=None, embed=e)
 
         
 @client.event
