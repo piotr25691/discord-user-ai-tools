@@ -34,7 +34,7 @@ async def fetch(ctx, user: discord.Member, gpt=""):
                 count += 1
                 if count % 500 == 0:
                     print(f"Processed {count} messages")
-                if message.author.id == user.id:
+                if message.author.id == user.id and message.content:
                     if not gpt:
                         name = "dataset.txt"
                         with open(name, "a", encoding="utf-8") as f:
