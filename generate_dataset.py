@@ -32,7 +32,8 @@ async def fetch(ctx, user: discord.Member, gpt=""):
         try:
             async for message in channel.history(limit=None):
                 count += 1
-                print(f"Processed {count} messages")
+                if count % 500 == 0:
+                    print(f"Processed {count} messages")
                 if message.author.id == user.id:
                     if not gpt:
                         name = "dataset.txt"
