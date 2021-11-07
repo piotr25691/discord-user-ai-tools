@@ -18,16 +18,18 @@ load_dotenv()
 
 
 @client.command()
-async def fetch(ctx, uid: int, gpt=""):
+async def fetch(ctx, user: discord.Member, gpt=""):
+    if gpt and gpt != "gpt":
+        return await ctx.send(f"Usage: {ctx.prefix}fetch <user> [gpt]\n<> is required, [] is optional")
     msg = await ctx.send("Fetching messages...\nThis will take a while.")
     messages = []
     count = 0
     for channel in [channel for channel in ctx.guild.channels if isinstance(channel, discord.TextChannel)]:
         try:
-            async for message in channel.history(limit=None):
+            async for message in channel.history(limit=100):
                 count += 1
                 print(f"Processed {count} messages")
-                if message.author.id == uid:
+                if message.author.id == user.id:
                     messages.append(message)
         except discord.Forbidden:
             pass
@@ -40,7 +42,13 @@ async def fetch(ctx, uid: int, gpt=""):
     with open(name, "w", encoding="utf-8") as f:
         f.write(res)
     await msg.delete()
-    await ctx.send(file=discord.File("messages.txt"))
+    await ctx.send(file=discord.File(name))
+
+
+@client.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.BadArgument):
+        await ctx.send("Please provide a valid user.")
 
 
 @client.event
