@@ -35,7 +35,7 @@ async def conditional(ctx, length: int, amount: int, *, start):
 @client.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.BadArgument):
-        await ctx.send("Please use integers, you dumbass.")
+        await ctx.send(f"Please use integers.\n{ctx.prefix}conditional [length] [amount] [prefix]")
         
         
 @client.event
