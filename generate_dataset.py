@@ -24,9 +24,9 @@ async def fetch(ctx, uid: int, gpt=""):
         except discord.Forbidden:
             pass
     if not gpt:
-        res = "\n".join([message.content for message in messages])
+        res = "\n".join(message.content for message in messages)
     else:
-        res = "\n".join([f"<|startoftext|> {message.content} <|endoftext|>" for message in messages])
+        res = "\n".join(f"<|startoftext|> {message.content} <|endoftext|>" for message in messages)
     with open("messages.txt", "w", errors="ignore") as f:
         f.write(res)
     await msg.delete()
