@@ -33,9 +33,11 @@ async def fetch(ctx, uid: int, gpt=""):
             pass
     if not gpt:
         res = "\n".join(message.content for message in messages)
+        name = "dataset.txt"
     else:
         res = "\n".join(f"<|startoftext|> {message.content} <|endoftext|>" for message in messages)
-    with open("messages.txt", "w", encoding="utf-8") as f:
+        name = "gpt_dataset.txt"
+    with open(name, "w", encoding="utf-8") as f:
         f.write(res)
     await msg.delete()
     await ctx.send(file=discord.File("messages.txt"))
