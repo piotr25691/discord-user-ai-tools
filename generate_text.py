@@ -1,11 +1,19 @@
 # This bot allows you to use your newly created model to make some really funny as if they were a certain person.
 # Requires an already trained model. (run generate_model.ipynb on Google Colab)
 # Requires discord.py (or any fork)
+
+# stdlib
 import os
-import gpt_2_simple as gpt2
+
+# discord.py
 from discord.ext import commands
 
+# third-party
+from dotenv import load_dotenv
+import gpt_2_simple as gpt2
+
 client = commands.Bot(command_prefix="hey sadie ")  # replace this prefix if you want your ai bot to be accurate
+load_dotenv()
 sess = None
 
 
@@ -37,4 +45,4 @@ async def on_connect():
 async def on_ready():
     print("Ready")
 
-client.run("TOKEN")
+client.run(os.environ.get("TOKEN"))

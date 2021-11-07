@@ -3,10 +3,18 @@
 # This script uses a bot user instead of a selfbot to reduce the chances of a Discord ban.
 # Requires discord.py (or any fork)
 
+# stdlib
+import os
+
+# discord.py
 import discord
 from discord.ext import commands
 
+# third-party
+from dotenv import load_dotenv
+
 client = commands.Bot(command_prefix="++")
+load_dotenv()
 
 
 @client.command()
@@ -37,4 +45,4 @@ async def fetch(ctx, uid: int, gpt=""):
 async def on_ready():
     print("Ready")
 
-client.run("TOKEN")
+client.run(os.environ.get("TOKEN"))
