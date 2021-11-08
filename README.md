@@ -23,5 +23,5 @@ To use Tensorflow, please download the following packages: <br>
 - [CUDNN 8.1](https://developer.download.nvidia.com/compute/redist/cudnn/v8.1.0/cudnn-11.2-windows-x64-v8.1.0.77.zip)<br>
 
 Have fun with your brand-new AIs!<br><br>
-**WARNING:** With the smallest model possible (117M) you can't have datasets over 1.6M messages or you'll run out of memory.<br>
+**WARNING:** With the smallest model possible (117M) you can't have datasets over 1.6M messages or you'll run out of memory.
 If you want to have larger datasets, please encode the dataset.
