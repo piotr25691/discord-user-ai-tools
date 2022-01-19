@@ -1,4 +1,4 @@
-# This bot allows you to use your newly created model to make some really funny as if they were a certain person.
+# This bot allows you to use your newly created model to make some really funny responses as if they were a certain person.
 # Requires an already trained model. (run generate_model.ipynb on Google Colab)
 # Requires discord.py (or any fork)
 
